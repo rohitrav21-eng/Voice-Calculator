@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Voice Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-glow"></div>
+
+    <div class="main-wrapper">
+        <div class="calculator-container">
+            <!-- Voice UI Section -->
+            <div class="voice-ui">
+                <div id="mic-button" class="mic-container">
+                    <div class="pulse-ring"></div>
+                    <div class="mic-icon">
+                        <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3z" />
+                            <path
+                                d="M17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="voice-status">
+                    <p id="status-text">Say "Get Up Calculator"</p>
+                    <div id="live-transcript" class="live-transcript"></div>
+                    <div id="voice-waves" class="voice-waves">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculator Display -->
+            <div class="display">
+                <div id="previous-op" class="previous-op"></div>
+                <div id="current-op" class="current-op">0</div>
+            </div>
+
+            <!-- Calculator Buttons -->
+            <div class="buttons">
+                <button data-action="clear" class="btn btn-clear">C</button>
+                <button data-action="backspace" class="btn btn-operator">⌫</button>
+                <button data-action="divide" class="btn btn-operator">÷</button>
+                <button data-action="multiply" class="btn btn-operator">×</button>
+
+                <button data-num="7" class="btn btn-num">7</button>
+                <button data-num="8" class="btn btn-num">8</button>
+                <button data-num="9" class="btn btn-num">9</button>
+                <button data-action="subtract" class="btn btn-operator">−</button>
+
+                <button data-num="4" class="btn btn-num">4</button>
+                <button data-num="5" class="btn btn-num">5</button>
+                <button data-num="6" class="btn btn-num">6</button>
+                <button data-action="add" class="btn btn-operator">+</button>
+
+                <button data-num="1" class="btn btn-num">1</button>
+                <button data-num="2" class="btn btn-num">2</button>
+                <button data-num="3" class="btn btn-num">3</button>
+                <button data-action="equals" class="btn btn-equals">=</button>
+
+                <button data-num="0" class="btn btn-num btn-zero">0</button>
+                <button data-num="." class="btn btn-num">.</button>
+            </div>
+        </div>
+
+        <div class="guide-panel">
+            <h2>Voice Command Guide</h2>
+            <div class="guide-steps">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <p>Say <strong>"Get Up Calculator"</strong> to wake me up.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <p>Speak your math command:</p>
+                    <ul>
+                        <li>"Add 140 and 20"</li>
+                        <li>"Subtract 10 from 100"</li>
+                        <li>"Multiply 30 and 50"</li>
+                        <li>"Divide 45 by 5"</li>
+                    </ul>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <p>Say <strong>"Stop Listening"</strong> to calculate.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
